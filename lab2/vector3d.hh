@@ -23,5 +23,7 @@ public:
     Vector3D& operator/=(float scalar);
     const Vector3D operator*(float scalar) const;
     const Vector3D operator/(float scalar) const;
-    const Vector3D operator*(float scalar, Vector3D &other) const;
+    const Vector3D operator-() const;
 };
+
+const Vector3D operator*(float scalar, Vector3D &other);

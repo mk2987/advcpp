@@ -56,3 +56,7 @@ const Vector3D Vector3D::operator/(float scalar) const {
 const Vector3D Vector3D::operator*(float scalar, Vector3D &other) const {
     return (Vector3D(other) *= other);
 }
+
+const Vector3D Vector3D::operator-() const {
+    return (Vector3D(*this) *= (-1));
+}
