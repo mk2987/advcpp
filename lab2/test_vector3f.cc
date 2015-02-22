@@ -128,6 +128,14 @@ TEST_F(TestVector3F, Magnitude) {
     EXPECT_FLOAT_EQ(v1[2], 3 / sqrtf(14));
 }
 
+TEST_F(TestVector3F, StringTest) {
+    ostringstream stream;
+    stream << v2;
+
+    EXPECT_EQ("( 1, 2, 3)", stream.str());
+}
+
+
 int main(int argc, char **argv) {
     InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();

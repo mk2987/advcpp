@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cmath>
 #include <cassert>
-#include "vector3d.hh"
+#include "color.hh"
 using namespace std;
 
 Color& Color::operator+=(const Color &c) {
@@ -57,20 +57,16 @@ Color& Color::operator/=(float scalar) {
 }
 
 const Color Color::operator*(float scalar) const {
-    return (Color(*this) *= v);
+    return (Color(*this) *= scalar);
 }
 
-const Color Color::operator*(float scalar, const Color &c) const {
-    return (Color(v) *= scalar); 
+const Color operator*(float scalar, const Color &c) {
+    return (Color(c) *= scalar);
 }
 
 ostream& operator<<(ostream& os, const Color &c) {
-    os << "( " << v[0] << ", " << v[1] << ", " << v[2] << ")";
+    os << "( " << c.getRed() << ", "
+               << c.getGreen() << ", "
+               << c.getBlue()<< ")";
     return os;
-}
-
-const Color::operator*(const Color &c) const {
-    return this->red * c.red +
-           this->green * c.green +
-           this->blue * c.blue;
 }

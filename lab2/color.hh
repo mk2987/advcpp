@@ -1,3 +1,6 @@
+#include <ostream>
+using namespace std;
+
 class Color {
     float red, green, blue;
 public:
