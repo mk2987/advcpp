@@ -1,3 +1,6 @@
+#include <ostream>
+using namespace std;
+
 class Vector3F {
     float coords[3];
 public:
@@ -25,15 +28,17 @@ public:
     const Vector3F operator/(float scalar) const;
     const Vector3F operator-() const;
     float operator[](int i) const;
-    float& operator[](int i) const;
+    float& operator[](int i);
+
     // dot product
     float operator*(const Vector3F &v) const;
     // cross product
     const Vector3F operator%(const Vector3F &v) const;
+
     float magSq() const;
     float mag() const;
     const Vector3F norm() const;
 };
 
 const Vector3F operator*(float scalar, const Vector3F &v);
-ostream& operator<<(ostream& os, const Vector3F &v);
+ostream& operator<<(ostream &os, const Vector3F &v);
