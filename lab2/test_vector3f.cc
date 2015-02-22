@@ -28,6 +28,14 @@ TEST_F(TestVector3F, AccessMembers) {
     EXPECT_EQ(v3[0], 1);
     EXPECT_EQ(v3[1], 2);
     EXPECT_EQ(v3[2], 3);
+
+    v1[0] = 4;
+    v1[1] = 5;
+    v1[2] = 6;
+
+    EXPECT_EQ(v1[0], 4);
+    EXPECT_EQ(v1[1], 5);
+    EXPECT_EQ(v1[2], 6);
 }
 
 TEST_F(TestVector3F, Arithmetic) {
