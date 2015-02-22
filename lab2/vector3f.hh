@@ -15,15 +15,25 @@ public:
         coords[2] = z;
     }
 
-    Vector3F& operator+=(Vector3F &other);
-    Vector3F& operator-=(Vector3F &other);
-    const Vector3F operator+(Vector3F &other) const;
-    const Vector3F operator-(Vector3F &other) const;
+    Vector3F& operator+=(const Vector3F &v);
+    Vector3F& operator-=(const Vector3F &v);
+    const Vector3F operator+(const Vector3F &v) const;
+    const Vector3F operator-(const Vector3F &v) const;
     Vector3F& operator*=(float scalar);
     Vector3F& operator/=(float scalar);
     const Vector3F operator*(float scalar) const;
     const Vector3F operator/(float scalar) const;
     const Vector3F operator-() const;
+    float operator[](int i) const;
+    float& operator[](int i) const;
+    // dot product
+    float operator*(const Vector3F &v) const;
+    // cross product
+    const Vector3F operator%(const Vector3F &v) const;
+    float magSq() const;
+    float mag() const;
+    const Vector3F norm() const;
 };
 
-const Vector3F operator*(float scalar, Vector3F &other);
+const Vector3F operator*(float scalar, const Vector3F &v);
+ostream& operator<<(ostream& os, const Vector3F &v);
